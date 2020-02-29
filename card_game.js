@@ -23,8 +23,18 @@ function getInput(prompt) {
 function buildDeck() {
   const suits = ['spades', 'hearts', 'diamonds', 'clubs'];
   const ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+  const deck = [];
 
+  for (let i = 0; i < suits.length; i++) {
+    for (let x = 0; x < ranks.length; x++) {
+      deck.push({ suit: suits[i], rank: ranks[x], value: x });
+    };
+  };
+  // console.log(deck);
+  return deck;
 }
+
+buildDeck();
 
 
 
