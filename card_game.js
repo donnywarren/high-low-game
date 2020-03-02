@@ -51,14 +51,14 @@ buildDeck();
 // 10. Review the code from steps 7,8, and 9, and leave a comment explaining what you believe those lines of code are doing as they swap assignments of values between them.
 // 11. Finally, close the while loop and return "shuffledDeck". You should now be able to run shuffle(buildDeck()) in node and see your shuffled deck of cards.
 
-function shuffle(deck) {
+const shuffle = (deck) => {
   const shuffledDeck = deck;
   let currentIndex = deck.length;
   let temporaryValue;
   let randomIndex;
   while (currentIndex !== 0) {
     randomIndex = Math.floor((Math.random() * currentIndex));
-    currentIndex = currentIndex - 1;
+    currentIndex -= 1;
     temporaryValue = shuffledDeck[currentIndex];
     shuffledDeck[currentIndex] = shuffledDeck[randomIndex];
     shuffledDeck[randomIndex] = temporaryValue;
@@ -67,6 +67,8 @@ function shuffle(deck) {
 }
 
 shuffle(buildDeck());
+
+// console.log(shuffledDeck);
 
 // STEP THREE - Greeting the player
 // 1. Declare a function called greet()
