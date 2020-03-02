@@ -4,7 +4,7 @@ const readlineSync = require('readline-sync');
 // is a question (string) to ask the user.
 // the returning value of getInput() is a string of whatever the user has typed as the response
 
-function getInput(prompt) {
+const getInput = (prompt) => {
   return readlineSync.question(`${prompt}: `);
 }
 
@@ -20,7 +20,7 @@ function getInput(prompt) {
 // HINT: The result of step 6 is that each card will be an object inside of the deck array, for example [{suit: "diamonds", rank: "A", value: 0}, {suit: "diamonds", rank: "2", value: 1},...{etc}]. For example, if we wanted to organize the players and teams of the NBA with index numbers, we could write: nba.push({player: players[i], team: teams[n], index: i})
 // 7. After your loops, return deck, which should now return an array full of card objects if you were to run buildDeck().
 
-function buildDeck() {
+const buildDeck = () => {
   const suits = ['spades', 'hearts', 'diamonds', 'clubs'];
   const ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
   const deck = [];
@@ -78,7 +78,7 @@ shuffle(buildDeck());
 // 5. Done.
 
 
-function greet() {
+const greet = () => {
   const name = getInput("Welcome!  What is your name?");
   return name;
 }
@@ -88,7 +88,7 @@ function greet() {
 // 1. declare a function called compare that takes two cards as arguments
 // 2. return the value property of the first card minus the value property of the second card.
 
-function compare(card1, card2) {
+const compare = (card1, card2) => {
   return card1.value - card2.value;
 }
 
@@ -104,8 +104,8 @@ function compare(card1, card2) {
 // 7. If input doesn't equal h or l, tell the user that they need to guess either h or l and that they get no points for this round, then return false.
 
 
-function guess(card1, card2) {
-  console.log(card1.rank, card1.suit)
+const guess = (card1, card2) => {
+  console.log(card1.ranks, card1.suits)
   const input = getInput('Will the next card will be higher type "h".  If lower type "l".');
 
   if (input === "h") {
@@ -135,7 +135,7 @@ function guess(card1, card2) {
 // 11. Write a line of code to execute the playGame function.
 
 
-function playGame() {
+const playGame = () => {
   const deck = shuffle(buildDeck());
   const playerName = greet();
   let score = 0;
