@@ -27,7 +27,7 @@ const buildDeck = () => {
 
   for (let i = 0; i < suits.length; i++) {
     for (let x = 0; x < ranks.length; x++) {
-      deck.push({ suit: suits[i], rank: ranks[x], value: x });
+      deck.push({ suits: suits[i], ranks: ranks[x], value: x });
     };
   };
   return deck;
